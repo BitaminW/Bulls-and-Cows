@@ -23,18 +23,35 @@ void GameManager::InitGame(){
 
 
 void GameManager::DrawMenu(){
-	const char* Menu[10][14] = {
-		"■■■■",
-		
-	
-	
+	const char* Menu[7][14] = {
+		{"■■",   "    ■  ■", "  ■", "      ■", "      ■■■"},
+		{"■  ■", "  ■  ■", "  ■", "      ■", "      ■"},
+		{"■  ■", "  ■  ■", "  ■", "      ■", "      ■"},
+		{"■■",   "    ■  ■", "  ■", "      ■", "      ■■■"},
+		{"■  ■", "  ■  ■", "  ■", "      ■", "          ■"},
+		{"■  ■", "  ■  ■", "  ■", "      ■", "          ■"},
+		{"■■",   "    ■■■", "  ■■■", "  ■■■", "  ■■■"}
 	};
+
+
+	for (int i = 0; i < 7; i++) {
+		for (int j = 0; j < 14; j++) {
+			
+			switch (j){
+			case 0:
+				RED
+					break;
+			}
+			printf("%s", Menu[i][j]);
+		}
+		std::cout << std::endl;
+	}
 }
 
 void GameManager::StartGame(){
 	InitGame();
-	Gotoxy(10, 5);
-	
+	// Gotoxy(10, 5);
+	DrawMenu();
 }
 
 void GameManager::EndGame(){
