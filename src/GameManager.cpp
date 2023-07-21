@@ -17,9 +17,8 @@ GameManager* GameManager::GetInstance(){
 }
 
 void GameManager::InitGame(){
-	// Window size setting
-	system(WINDOW_SIZE);
-	
+	system(WINDOW_SIZE);		// Window size setting
+	DisableCursor();
 }
 
 
@@ -106,11 +105,11 @@ void GameManager::DrawMenu(){
 		if (_kbhit()) {
 			int key = _getch();
 
-			if (key == 224 || key == 0) {
+			if (key == ARROWKEY) {
 				key = _getch();
 
 				switch (key) {
-				case 80: // 아래 방향키
+				case DOWN: // 아래 방향키
 					if (curMenu < 2) {
 						Gotoxy(xPos - 2, yPos + 2 * curMenu);
 						std::cout << " " << "\n";
@@ -120,7 +119,7 @@ void GameManager::DrawMenu(){
 						curMenu++;
 					}
 					break;
-				case 72: // 위 방향키
+				case UP: // 위 방향키
 					if (curMenu > 0) {
 						Gotoxy(xPos - 2, yPos + 2 * curMenu);
 						std::cout << " " << "\n";
@@ -133,15 +132,24 @@ void GameManager::DrawMenu(){
 				}
 			}
 
-			if (key == 13) { // 엔터 키
-				// DoSomething
-				break;
+			if (key == ENTER) { // 엔터 키
+				switch (curMenu) {
+				case 0:				// Start SingleMode
+					system("cls");
+					SingleModeLoop();		
+					break;
+				case 1:				// Start MultiMode
+					break;
+				case 2:				// End Game 
+					exit(0);
+					break;
+				}
 			}
 		}
 	}
 
-}
 
+}
 
 void GameManager::StartGame(){
 	InitGame();
@@ -158,6 +166,16 @@ void GameManager::Gotoxy(int x, int y){
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cur);
 }
 
+void GameManager::DisableCursor(){
+	CONSOLE_CURSOR_INFO cursorInfo = { 0, };
+	cursorInfo.dwSize = 1; //커서 굵기 (1 ~ 100)
+	cursorInfo.bVisible = FALSE; //커서 Visible TRUE(보임) FALSE(숨김)
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
+}
 
+
+void GameManager::SingleModeLoop() {
+
+}
 
 
