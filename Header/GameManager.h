@@ -16,9 +16,10 @@ private:
 
 	void InitGame();
 	void DrawMenu();
+	void SingleModeLoop();
 
 	void Gotoxy(int x, int y);
-
+	void DisableCursor();
 
 private:
 	GameManager();
