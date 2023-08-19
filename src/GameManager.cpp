@@ -1,5 +1,7 @@
 #include "Core.h"
 
+using std::string;
+
 GameManager* GameManager::instance = nullptr;
 
 GameManager::GameManager(){}
@@ -90,7 +92,7 @@ void GameManager::DrawMenu(){
 		std::cout << std::endl;
 	}
 
-	ORIGINAL;
+	ORIGINAL;		// 텍스트 기본 색상으로 변경
 
 	Gotoxy(xPos, yPos);
 	std::cout << "싱글 플레이" << std::endl;
@@ -148,7 +150,6 @@ void GameManager::DrawMenu(){
 		}
 	}
 
-
 }
 
 void GameManager::StartGame(){
@@ -175,6 +176,11 @@ void GameManager::DisableCursor(){
 
 
 void GameManager::SingleModeLoop() {
+	SecretNumber inputSecretNumber;
+	std::cout << "중복되지 않는 4자리 숫자를 입력해 주세요 : ";
+	std::cin >> inputSecretNumber;
+
+	std::cout << inputSecretNumber;
 
 }
 
