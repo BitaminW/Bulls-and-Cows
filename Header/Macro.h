@@ -1,9 +1,9 @@
 #pragma once
 
-#define COL					 GetStdHandle(STD_OUTPUT_HANDLE)
+#define COL					         GetStdHandle(STD_OUTPUT_HANDLE)
 
 #define BLACK                SetConsoleTextAttribute(COL, 0x0000)        
-#define DARK_BLUE			 SetConsoleTextAttribute(COL, 0x0001)      
+#define DARK_BLUE			       SetConsoleTextAttribute(COL, 0x0001)      
 #define GREEN                SetConsoleTextAttribute(COL, 0x0002)        
 #define BLUE_GREEN           SetConsoleTextAttribute(COL, 0x0003)        
 #define BLOOD                SetConsoleTextAttribute(COL, 0x0004)        
@@ -12,8 +12,8 @@
 #define ORIGINAL             SetConsoleTextAttribute(COL, 0x0007)        
 #define GRAY                 SetConsoleTextAttribute(COL, 0x0008)        
 #define BLUE                 SetConsoleTextAttribute(COL, 0x0009)       
-#define HIGH_GREEN			 SetConsoleTextAttribute(COL, 0x000a)        
-#define SKY_BLUE			 SetConsoleTextAttribute(COL, 0x000b)        
+#define HIGH_GREEN			     SetConsoleTextAttribute(COL, 0x000a)        
+#define SKY_BLUE			       SetConsoleTextAttribute(COL, 0x000b)        
 #define RED                  SetConsoleTextAttribute(COL, 0x000c)       
 #define PLUM                 SetConsoleTextAttribute(COL, 0x000d)        
 #define YELLOW               SetConsoleTextAttribute(COL, 0x000e)        
