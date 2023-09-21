@@ -2,9 +2,9 @@
 
 #define COL    GetStdHandle(STD_OUTPUT_HANDLE)
 
-#define BLACK    SetConsoleTextAttribute(COL, 0x0000)        
-#define DARK_BLUE  SetConsoleTextAttribute(COL, 0x0001)      
-#define GREEN    SetConsoleTextAttribute(COL, 0x0002)        
+#define BLACK          SetConsoleTextAttribute(COL, 0x0000)        
+#define DARK_BLUE      SetConsoleTextAttribute(COL, 0x0001)      
+#define GREEN          SetConsoleTextAttribute(COL, 0x0002)        
 #define BLUE_GREEN           SetConsoleTextAttribute(COL, 0x0003)        
 #define BLOOD                SetConsoleTextAttribute(COL, 0x0004)        
 #define PURPLE               SetConsoleTextAttribute(COL, 0x0005)        
